@@ -1,0 +1,8 @@
+{
+  "phpcs.executablePath": "${workspaceFolder}/vendor/bin/phpcs",
+  "phpcs.standard": "${workspaceFolder}/phpcs.xml",
+  "php.validate.executablePath": "",
+  "php.suggest.basic": false,
+  "phpcs.enable": true,
+  "phpcs.autoConfigSearch": false
+}

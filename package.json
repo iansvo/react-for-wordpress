@@ -1,0 +1,33 @@
+{
+  "name": "react-for-wordpress",
+  "version": "1.0.0",
+  "description": "A workshop course to learn scrappy React skills for WordPress development.",
+  "main": "index.js",
+  "scripts": {
+    "wp-env": "wp-env",
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "lint:php": "vendor/bin/phpcs .",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start"
+  },
+  "author": "Ian Svoboda",
+  "license": "ISC",
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "@wordpress/env": "^10.26.0",
+    "@wordpress/scripts": "^30.19.0"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  }
+}

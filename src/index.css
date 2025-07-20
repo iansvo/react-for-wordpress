@@ -1,0 +1,10 @@
+.has-container-query {
+  container: var(--container-query);
+}
+
+p {
+  @container (max-width: 800px) {
+    background-color: rebeccapurple;
+    color: #fff;
+  }
+}
