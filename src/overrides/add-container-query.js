@@ -45,6 +45,7 @@ addFilter(
     withContainerQueryControl
 );
 
+// Add the new attribute to the Group block.
 function addContainerQuery( blockType ) {
   if('core/group' !== blockType.name) {
     return blockType;
@@ -61,7 +62,6 @@ addFilter(
 );
 
 // Add value to editor output.
-
 const withContainerQueryVariable = createHigherOrderComponent( ( BlockListBlock ) => {
   return ( props ) => {
     const { name, attributes } = props;
