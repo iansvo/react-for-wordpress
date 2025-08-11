@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "react-for-wordpress/is-multiple-of",
+  "version": "0.1.0",
+  "title": "Is Multiple Of",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Show the remainder of division between two numbers.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "firstNumber": {
+      "type": "number",
+      "default": 2
+    },
+    "secondNumber": {
+      "type": "number",
+      "default": 4
+    },
+    "result": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "textdomain": "is-multiple-of",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

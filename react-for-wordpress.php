@@ -7,6 +7,26 @@
  */
 
 /**
+ * Get the asset.php manifest file for a given slug in the build directory.
+ *
+ * @param string $slug The slug of the asset to get the info for.
+ * @return array The asset info.
+ */
+function get_asset_info( $slug ) {
+	$file = plugin_dir_url( __FILE__ ) . "build/$slug.asset.php";
+
+	if ( file_exists( $file ) ) {
+		$asset = require $file;
+
+		return $asset;
+	}
+
+	return [];
+}
+
+
+
+/**
  * Plugin Name: React for WordPress
  * Description: A workshop course to learn scrappy React skills for WordPress development.
  * Author: Ian Svoboda
@@ -31,3 +51,23 @@ function react_for_wordpress_enqueue_frontend_assets() {
 }
 
 add_action( 'enqueue_block_assets', 'react_for_wordpress_enqueue_frontend_assets' );
+
+/**
+ * Enqueue all blocks in the plugin automatically. This will ensure the block's index.js is properly registered.
+ *
+ * @return void
+ */
+function react_for_wordpress_register_blocks() {
+	$blocks_dir = plugin_dir_path( __FILE__ ) . 'build/blocks/';
+
+	if ( is_dir( $blocks_dir ) ) {
+			$block_folders = glob( $blocks_dir . '*', GLOB_ONLYDIR );
+
+		foreach ( $block_folders as $block_path ) {
+			if ( file_exists( $block_path . '/block.json' ) ) {
+					register_block_type( $block_path );
+			}
+		}
+	}
+}
+add_action( 'init', 'react_for_wordpress_register_blocks' );
