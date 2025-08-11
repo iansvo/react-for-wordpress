@@ -61,12 +61,10 @@ function react_for_wordpress_register_blocks() {
 	$blocks_dir = plugin_dir_path( __FILE__ ) . 'build/blocks/';
 
 	if ( is_dir( $blocks_dir ) ) {
-			$block_folders = glob( $blocks_dir . '*', GLOB_ONLYDIR );
+		$block_json_files = glob( $blocks_dir . '*/block.json' );
 
-		foreach ( $block_folders as $block_path ) {
-			if ( file_exists( $block_path . '/block.json' ) ) {
-					register_block_type( $block_path );
-			}
+		foreach ( $block_json_files as $filename ) {
+			register_block_type( $filename );
 		}
 	}
 }
