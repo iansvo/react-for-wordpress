@@ -67,5 +67,16 @@ function react_for_wordpress_register_blocks() {
 			register_block_type( $filename );
 		}
 	}
+
+	register_post_meta(
+		'page',
+		'bazinga',
+		[
+			'type'         => 'string',
+			'default'      => 'is the thing to say',
+			'show_in_rest' => true,
+			'single'       => true,
+		]
+	);
 }
 add_action( 'init', 'react_for_wordpress_register_blocks' );
